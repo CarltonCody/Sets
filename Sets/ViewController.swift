@@ -52,11 +52,12 @@ class ViewController: UIViewController {
     func moveToNextSet(){
         numRows -= 1    //Decreasing the plaholder rows by one
         
+        timer.invalidate()  //Invalidating the timer so it doesn't keep running.
+        
         if let index = removalIndex {   //Unwrapping the index from the tableview
             setTableView.deleteRows(at: [index], with: .automatic)
         }
         
-        timer.invalidate()  //Invalidating the timer so it doesn't keep running.
         setTableView.reloadData()   //Reloading the tableview
     }
     
