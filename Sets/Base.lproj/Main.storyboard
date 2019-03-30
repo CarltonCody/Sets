@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -29,9 +29,12 @@
                                 <state key="normal" title="Create new set">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="goToCreateSet:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jLM-is-n8x"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gBb-VD-Vir">
-                                <rect key="frame" x="20.666666666666657" y="102.66666666666669" width="372.66666666666674" height="687.66666666666652"/>
+                                <rect key="frame" x="20.666666666666657" y="146.66666666666669" width="372.66666666666674" height="643.66666666666652"/>
                                 <color key="backgroundColor" red="0.21960784310000001" green="0.23921568630000001" blue="0.23137254900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.090196078430000007" green="0.74509803919999995" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
@@ -61,7 +64,7 @@
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D3O-Cw-i1C">
+                                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D3O-Cw-i1C">
                                                                     <rect key="frame" x="254.99999999999997" y="0.0" width="117.66666666666666" height="120"/>
                                                                     <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="24"/>
                                                                     <nil key="textColor"/>
@@ -120,19 +123,38 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="2nO-x3-xba">
+                                <rect key="frame" x="20" y="110.66666666666667" width="374" height="29.000000000000014"/>
+                                <segments>
+                                    <segment title="Mon"/>
+                                    <segment title="Tue"/>
+                                    <segment title="Wed"/>
+                                    <segment title="Thu"/>
+                                    <segment title="Fri"/>
+                                    <segment title="Sat"/>
+                                    <segment title="Sun"/>
+                                </segments>
+                                <color key="tintColor" red="0.090196078430000007" green="0.74509803919999995" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="daySelected:" destination="BYZ-38-t0r" eventType="valueChanged" id="VB6-rz-Q5e"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="0.2196078431372549" green="0.23921568627450979" blue="0.23137254901960785" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="u9e-hj-YZG" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="19j-2r-7pO"/>
                             <constraint firstItem="T7s-63-Gee" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="3Ox-kn-ru9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2nO-x3-xba" secondAttribute="trailing" constant="20" id="3Qf-hr-Evh"/>
                             <constraint firstItem="gBb-VD-Vir" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.9" id="7sY-BO-9eW"/>
+                            <constraint firstItem="2nO-x3-xba" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="9NW-8D-lfh"/>
                             <constraint firstItem="u9e-hj-YZG" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.08" id="Ayf-eg-60k"/>
+                            <constraint firstItem="2nO-x3-xba" firstAttribute="top" secondItem="T7s-63-Gee" secondAttribute="bottom" constant="8" id="GcE-9N-FVx"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="T7s-63-Gee" secondAttribute="trailing" constant="20" id="JNj-DQ-tOB"/>
+                            <constraint firstItem="gBb-VD-Vir" firstAttribute="top" secondItem="2nO-x3-xba" secondAttribute="bottom" constant="8" id="YlN-Mm-Fo8"/>
                             <constraint firstItem="u9e-hj-YZG" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="cEO-dg-ls6"/>
                             <constraint firstItem="u9e-hj-YZG" firstAttribute="top" secondItem="gBb-VD-Vir" secondAttribute="bottom" id="qxs-bU-Ty8"/>
                             <constraint firstItem="gBb-VD-Vir" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="rCw-67-3eW"/>
                             <constraint firstItem="T7s-63-Gee" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="tYt-g9-Rdj"/>
-                            <constraint firstItem="gBb-VD-Vir" firstAttribute="top" secondItem="T7s-63-Gee" secondAttribute="bottom" id="xNA-1b-u4W"/>
                             <constraint firstItem="u9e-hj-YZG" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="z7B-s4-Uua"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -141,7 +163,6 @@
                                 <exclude reference="JNj-DQ-tOB"/>
                                 <exclude reference="3Ox-kn-ru9"/>
                                 <exclude reference="tYt-g9-Rdj"/>
-                                <exclude reference="xNA-1b-u4W"/>
                                 <exclude reference="19j-2r-7pO"/>
                                 <exclude reference="Ayf-eg-60k"/>
                                 <exclude reference="cEO-dg-ls6"/>
@@ -151,15 +172,160 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="daySegmentControl" destination="2nO-x3-xba" id="oaa-Aa-lRQ"/>
                         <outlet property="setTableView" destination="gBb-VD-Vir" id="G8N-Cu-Nzd"/>
+                        <segue destination="8o4-8N-xVB" kind="presentation" identifier="goToCreateSetSegue" id="16l-Ev-rre"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="152.17391304347828" y="51.5625"/>
         </scene>
+        <!--Create Set View Controller-->
+        <scene sceneID="5xf-EP-4St">
+            <objects>
+                <viewController id="8o4-8N-xVB" customClass="CreateSetViewController" customModule="Sets" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Tee-h1-3ol">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="d9I-ot-qcT">
+                                <rect key="frame" x="103.66666666666669" y="139" width="207" height="29"/>
+                                <segments>
+                                    <segment title="Set"/>
+                                    <segment title="Rest"/>
+                                </segments>
+                                <connections>
+                                    <action selector="setSelector:" destination="8o4-8N-xVB" eventType="valueChanged" id="PQU-eg-2SY"/>
+                                </connections>
+                            </segmentedControl>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title of set" textAlignment="natural" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="Up7-Qp-n0c">
+                                <rect key="frame" x="54" y="192" width="306" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardAppearance="alert" returnKeyType="done"/>
+                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ScG-UZ-PnX">
+                                <rect key="frame" x="0.0" y="355" width="414" height="44.666666666666686"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9sk-Pz-Q1W">
+                                        <rect key="frame" x="0.0" y="0.0" width="207" height="44.666666666666664"/>
+                                        <color key="backgroundColor" red="0.60784313729999995" green="0.1137254902" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="20"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelButtonPressed:" destination="8o4-8N-xVB" eventType="touchUpInside" id="4i4-UP-8c6"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yey-J8-WlR">
+                                        <rect key="frame" x="207" y="0.0" width="207" height="44.666666666666664"/>
+                                        <color key="backgroundColor" red="0.090196078430000007" green="0.74509803919999995" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="20"/>
+                                        <state key="normal" title="Done">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="doneButtonPressed:" destination="8o4-8N-xVB" eventType="touchUpInside" id="Kdf-P4-UO8"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create new set or rest" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="QSO-iR-Ose">
+                                <rect key="frame" x="83" y="54" width="248" height="29"/>
+                                <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="fnS-EF-hgL">
+                                <rect key="frame" x="54" y="247" width="306" height="29"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="sZd-FV-0qq">
+                                        <rect key="frame" x="0.0" y="0.0" width="12.666666666666666" height="29"/>
+                                        <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minutes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cgx-BG-Ra2">
+                                        <rect key="frame" x="94.333333333333343" y="0.0" width="77" height="29"/>
+                                        <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="60" translatesAutoresizingMaskIntoConstraints="NO" id="ZMD-wd-ygN">
+                                        <rect key="frame" x="212" y="0.0" width="94" height="29"/>
+                                        <connections>
+                                            <action selector="incrementMinutes:" destination="8o4-8N-xVB" eventType="valueChanged" id="BE6-Ho-KfD"/>
+                                        </connections>
+                                    </stepper>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="20s-ts-Xwl">
+                                <rect key="frame" x="54" y="301" width="306" height="29"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="3rS-gs-I5r">
+                                        <rect key="frame" x="0.0" y="0.0" width="12.666666666666666" height="29"/>
+                                        <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seconds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GQU-md-be1">
+                                        <rect key="frame" x="92.333333333333343" y="0.0" width="81" height="29"/>
+                                        <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="60" translatesAutoresizingMaskIntoConstraints="NO" id="Awh-5G-I23">
+                                        <rect key="frame" x="212" y="0.0" width="94" height="29"/>
+                                        <connections>
+                                            <action selector="incrementSeconds:" destination="8o4-8N-xVB" eventType="valueChanged" id="a4w-kf-Qcp"/>
+                                        </connections>
+                                    </stepper>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.21960784310000001" green="0.23921568630000001" blue="0.23137254900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.090196078430000007" green="0.74509803919999995" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="20s-ts-Xwl" firstAttribute="width" secondItem="fnS-EF-hgL" secondAttribute="width" id="6me-Ny-8yQ"/>
+                            <constraint firstItem="ScG-UZ-PnX" firstAttribute="height" secondItem="Tee-h1-3ol" secondAttribute="height" multiplier="0.05" id="7e0-cH-jJi"/>
+                            <constraint firstItem="fnS-EF-hgL" firstAttribute="top" secondItem="Up7-Qp-n0c" secondAttribute="bottom" constant="25" id="8gP-xR-HwU"/>
+                            <constraint firstItem="xMx-wx-g4g" firstAttribute="trailing" secondItem="QSO-iR-Ose" secondAttribute="trailing" constant="83" id="Fiy-Ui-tzz"/>
+                            <constraint firstItem="ScG-UZ-PnX" firstAttribute="top" secondItem="20s-ts-Xwl" secondAttribute="bottom" constant="25" id="Fzh-Jk-D8Q"/>
+                            <constraint firstItem="Up7-Qp-n0c" firstAttribute="leading" secondItem="xMx-wx-g4g" secondAttribute="leading" constant="54" id="GGN-k3-bPO"/>
+                            <constraint firstItem="xMx-wx-g4g" firstAttribute="trailing" secondItem="fnS-EF-hgL" secondAttribute="trailing" constant="54" id="K0Q-xb-xNX"/>
+                            <constraint firstItem="d9I-ot-qcT" firstAttribute="centerX" secondItem="xMx-wx-g4g" secondAttribute="centerX" id="RNM-DX-7uR"/>
+                            <constraint firstItem="xMx-wx-g4g" firstAttribute="trailing" secondItem="20s-ts-Xwl" secondAttribute="trailing" constant="54" id="ScA-ci-W4e"/>
+                            <constraint firstItem="20s-ts-Xwl" firstAttribute="leading" secondItem="xMx-wx-g4g" secondAttribute="leading" constant="54" id="Szr-Ug-hG1"/>
+                            <constraint firstItem="xMx-wx-g4g" firstAttribute="trailing" secondItem="ScG-UZ-PnX" secondAttribute="trailing" id="WzG-H7-68U"/>
+                            <constraint firstItem="QSO-iR-Ose" firstAttribute="top" secondItem="xMx-wx-g4g" secondAttribute="top" constant="10" id="XWL-MS-Aku"/>
+                            <constraint firstItem="d9I-ot-qcT" firstAttribute="top" secondItem="QSO-iR-Ose" secondAttribute="bottom" constant="56" id="Xsr-in-jTy"/>
+                            <constraint firstItem="Up7-Qp-n0c" firstAttribute="top" secondItem="d9I-ot-qcT" secondAttribute="bottom" constant="25" id="Yya-1H-GaU"/>
+                            <constraint firstItem="fnS-EF-hgL" firstAttribute="leading" secondItem="xMx-wx-g4g" secondAttribute="leading" constant="54" id="b1Z-Ec-nFP"/>
+                            <constraint firstItem="xMx-wx-g4g" firstAttribute="trailing" secondItem="Up7-Qp-n0c" secondAttribute="trailing" constant="54" id="b6U-FM-SNa"/>
+                            <constraint firstItem="fnS-EF-hgL" firstAttribute="width" secondItem="Up7-Qp-n0c" secondAttribute="width" id="be1-ed-dtF"/>
+                            <constraint firstItem="QSO-iR-Ose" firstAttribute="leading" secondItem="xMx-wx-g4g" secondAttribute="leading" constant="83" id="eO9-Th-V23"/>
+                            <constraint firstItem="20s-ts-Xwl" firstAttribute="top" secondItem="fnS-EF-hgL" secondAttribute="bottom" constant="25" id="kvf-XQ-Dsa"/>
+                            <constraint firstItem="ScG-UZ-PnX" firstAttribute="leading" secondItem="xMx-wx-g4g" secondAttribute="leading" id="qHb-1b-jy0"/>
+                            <constraint firstItem="d9I-ot-qcT" firstAttribute="width" secondItem="Tee-h1-3ol" secondAttribute="width" multiplier="0.5" id="xjA-Bi-LNX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xMx-wx-g4g"/>
+                    </view>
+                    <connections>
+                        <outlet property="minNumLabel" destination="sZd-FV-0qq" id="Unh-am-ydV"/>
+                        <outlet property="secNumLabel" destination="3rS-gs-I5r" id="yI2-nz-797"/>
+                        <outlet property="setNameTextField" destination="Up7-Qp-n0c" id="JSO-Ud-I16"/>
+                        <segue destination="AFh-ry-ceR" kind="unwind" identifier="backToMainVC" unwindAction="backFromCreateWithSegue:" id="Dkc-Hr-fIp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f0m-JQ-LwE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="AFh-ry-ceR" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="150.72463768115944" y="770.75892857142856"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="round_play_arrow_black_48pt" width="144" height="144"/>
+        <image name="round_play_arrow_black_48pt" width="48" height="48"/>
     </resources>
 </document>

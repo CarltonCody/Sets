@@ -37,5 +37,9 @@ class SetViewCell: UITableViewCell {
         delegate?.didTapTimerButton()
     }
     
+    func updateTimerLabel(timerLabel:String) {
+        self.timerLabel.text = timerLabel
+    }
+    
 }
 

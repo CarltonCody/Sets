@@ -15,6 +15,8 @@
 		19020D5E222DF671007F9931 /* VarelaRound-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 19020D5D222DF671007F9931 /* VarelaRound-Regular.ttf */; };
 		1903A4D42234BEB500605177 /* SetViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1903A4D32234BEB500605177 /* SetViewCell.swift */; };
 		1903A4D62234D10900605177 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1903A4D52234D10900605177 /* CardView.swift */; };
+		194598B322416ADD0029EB66 /* SetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194598B222416ADD0029EB66 /* SetModel.swift */; };
+		1975482A22497E6500D7A1DB /* CreateSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1975482922497E6500D7A1DB /* CreateSetViewController.swift */; };
 		19C9A4AC2240401A008C4257 /* ConversionUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C9A4AB2240401A008C4257 /* ConversionUtils.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +31,8 @@
 		19020D5D222DF671007F9931 /* VarelaRound-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VarelaRound-Regular.ttf"; sourceTree = "<group>"; };
 		1903A4D32234BEB500605177 /* SetViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetViewCell.swift; sourceTree = "<group>"; };
 		1903A4D52234D10900605177 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		194598B222416ADD0029EB66 /* SetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetModel.swift; sourceTree = "<group>"; };
+		1975482922497E6500D7A1DB /* CreateSetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSetViewController.swift; sourceTree = "<group>"; };
 		19C9A4AB2240401A008C4257 /* ConversionUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -62,12 +66,13 @@
 		19020D49222DF4EF007F9931 /* Sets */ = {
 			isa = PBXGroup;
 			children = (
+				1975482B22497E7F00D7A1DB /* ViewControllers */,
+				194598B122416AB80029EB66 /* Models */,
 				19C9A4AA22403FF6008C4257 /* Utils */,
 				19C9A4A922403FA7008C4257 /* CustomComponents */,
 				19C9A4A822403F92008C4257 /* CustomCells */,
 				19020D5C222DF657007F9931 /* Fonts */,
 				19020D4A222DF4EF007F9931 /* AppDelegate.swift */,
-				19020D4C222DF4EF007F9931 /* ViewController.swift */,
 				19020D4E222DF4EF007F9931 /* Main.storyboard */,
 				19020D51222DF4F0007F9931 /* Assets.xcassets */,
 				19020D53222DF4F0007F9931 /* LaunchScreen.storyboard */,
@@ -82,6 +87,23 @@
 				19020D5D222DF671007F9931 /* VarelaRound-Regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		194598B122416AB80029EB66 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				194598B222416ADD0029EB66 /* SetModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1975482B22497E7F00D7A1DB /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1975482922497E6500D7A1DB /* CreateSetViewController.swift */,
+				19020D4C222DF4EF007F9931 /* ViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		19C9A4A822403F92008C4257 /* CustomCells */ = {
@@ -140,6 +162,7 @@
 				TargetAttributes = {
 					19020D46222DF4EF007F9931 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -182,8 +205,10 @@
 			files = (
 				19020D4D222DF4EF007F9931 /* ViewController.swift in Sources */,
 				1903A4D42234BEB500605177 /* SetViewCell.swift in Sources */,
+				1975482A22497E6500D7A1DB /* CreateSetViewController.swift in Sources */,
 				19C9A4AC2240401A008C4257 /* ConversionUtils.swift in Sources */,
 				1903A4D62234D10900605177 /* CardView.swift in Sources */,
+				194598B322416ADD0029EB66 /* SetModel.swift in Sources */,
 				19020D4B222DF4EF007F9931 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -340,7 +365,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.codycarlton.Sets;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -359,7 +384,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.codycarlton.Sets;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
