@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import CoreData
 
 let toCreateSegueId: String = "goToCreateSetSegue"
+let toUpdateSegueID: String = "updateSetSegue"
 
 class ViewController: UIViewController {
 
@@ -22,8 +24,12 @@ class ViewController: UIViewController {
     var timer_label: String? //For updating the timerlabel
     var numRows = 0 //Placeholder rows
     var removalIndex: IndexPath?
-    var setArray: [SetModel]?
+    var setArray: [Set]?
     var dayOfWeek: String?
+    var updateIndexPath:Int?
+    
+     let CDcontext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext //Getting the context of the CoreData object
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,20 +40,13 @@ class ViewController: UIViewController {
             daySegmentControl.selectedSegmentIndex = getCurrentDay(currentDay: day)
         }
         
-        
-        
-        //Place holder data
-        let setOne = SetModel(setTitle: "Set one", setTime: 90, isRestSet: 0, dayOfWeek: "Mon")
-        let setTwo = SetModel(setTitle: "Rest", setTime: 60, isRestSet: 1, dayOfWeek: "Mon")
-        let setThree = SetModel(setTitle: "SetTwo", setTime: 60, isRestSet: 0, dayOfWeek: "Mon")
-        
-        setArray = [setOne, setTwo, setThree]
+        loadSetData()
         
         if let numberOfRows = setArray{
             numRows = numberOfRows.count
         }
         
-        setTime = setArray![0].setTime!
+        setTime = setArray![0].setTime
         
         setTableView.delegate = self
         setTableView.dataSource = self
@@ -78,12 +77,30 @@ class ViewController: UIViewController {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == toCreateSegueId {
+        
+        switch segue.identifier {
             
+        case toCreateSegueId:
             let createSetVC = segue.destination as! CreateSetViewController
             createSetVC.dayOfWeek = dayOfWeek
             
+        case toUpdateSegueID:
+            let updateSetVC = segue.destination as! UpdateSetViewController
+            updateSetVC.delegate = self
+            if let updateIndex = updateIndexPath{
+                if let sets = setArray{
+                    updateSetVC.setID = updateIndex
+                    updateSetVC.setTitle = sets[updateIndex].setTitle!
+                    updateSetVC.dayOfWeek = sets[updateIndex].dayOfWeek!
+                    updateSetVC.isRestSet = Int(sets[updateIndex].isRestSet)
+                    updateSetVC.setTime = sets[updateIndex].setTime
+                }
+            }
+            
+        default:
+            print("Error navigating.")
         }
+        
     }
     
     @IBAction func goToCreateSet(_ sender: Any) {
@@ -91,8 +108,9 @@ class ViewController: UIViewController {
     
     }
     
-    @IBAction func backFromCreate(segue: UIStoryboardSegue){
-        //MARK: - Reload data
+    @IBAction func backFromCreateScreen(segue: UIStoryboardSegue){
+        loadSetData()
+
     }
     
     func getCurrentDay(currentDay: String) -> Int{
@@ -147,7 +165,6 @@ class ViewController: UIViewController {
         }
     }
     
-    
     func moveToNextSet(){
         numRows -= 1    //Decreasing the plaholder rows by one
         setArray?.remove(at: 0)
@@ -165,6 +182,19 @@ class ViewController: UIViewController {
             }else{
                 runTimer()
             }
+        }
+    }
+    
+    func loadSetData(){
+        
+        let request: NSFetchRequest<Set> = Set.fetchRequest()
+        do{
+            setArray = try CDcontext.fetch(request)
+            numRows = setArray!.count
+            setTableView.reloadData()
+            
+        } catch {
+            print("Error fetching data")
         }
     }
     
@@ -191,7 +221,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
         }
         
         if let set_timer = setArray {
-            setCell.timerLabel.text = ConversionUtils.timeString(time: set_timer[indexPath.row].setTime!)
+            setCell.timerLabel.text = ConversionUtils.timeString(time: set_timer[indexPath.row].setTime)
         }
         
         return setCell
@@ -202,13 +232,13 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return numRows  //Placeholder rows for testing.
-        
-        //return setArray?.count
+        return numRows
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        updateIndexPath = indexPath.row
+        self.performSegue(withIdentifier: toUpdateSegueID, sender: nil)
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -225,8 +255,31 @@ extension ViewController: TimerButtonDelegate{
     func didTapTimerButton() {
         runTimer()  //Running the timer.
     }
-    
 }//End of TimerButtonDelegate.
+
+extension ViewController: UpdateSetDataDelegate{
+    
+    func updateSet(setID: Int, setTitle: String, setTime: Double, isRestSet: Int, dayOfWeek: String) {
+        
+        if let updateSet = setArray{
+            
+            updateSet[setID].setValue(setTitle, forKey: "setTitle")
+            updateSet[setID].setValue(setTime, forKey: "setTime")
+            updateSet[setID].setValue(isRestSet, forKey: "isRestSet")
+            updateSet[setID].setValue(dayOfWeek, forKey: "dayOfWeek")
+            
+        }
+        
+        do {
+            try CDcontext.save()
+        } catch {
+            print("Error saving context \(error)")
+        }
+        self.setTime = setArray![0].setTime
+        setTableView.reloadData()
+        
+    }
+}//End of UpdateSetDataDelegate
 
 extension Date{
     func dayOfWeek() -> String {

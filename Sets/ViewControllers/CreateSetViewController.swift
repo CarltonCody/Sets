@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class CreateSetViewController: UIViewController {
     
@@ -18,7 +19,8 @@ class CreateSetViewController: UIViewController {
     var secNum: Int = 0
     var setName: String = "Set one"
     var isRest: Int = 0 //0 is a working set. 1 is a rest set.
-    var dayOfWeek: String?
+    
+    var dayOfWeek: String? //This is set when navigated to this VC
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +35,7 @@ class CreateSetViewController: UIViewController {
             return
         case 1:
             isRest = 1
+            setNameTextField.text = "Rest"
         default:
             isRest = 0
         }
@@ -41,8 +44,7 @@ class CreateSetViewController: UIViewController {
     @IBAction func incrementMinutes(_ sender: UIStepper) {
         
         minNumLabel.text = "\(Int(sender.value))"
-        minNum = Int(sender.value + 60) //The 60 represents 60 seconds but displays 1 minute 2 minutes...
-        
+        minNum = Int(sender.value * 60) //The 60 represents 60 seconds but displays 1 minute 2 minutes...
     }
     
     @IBAction func incrementSeconds(_ sender: UIStepper) {
@@ -50,7 +52,6 @@ class CreateSetViewController: UIViewController {
         secNumLabel.text = "\(Int(sender.value))"
         secNum = Int(sender.value)
     }
-    
     
     @IBAction func cancelButtonPressed(_ sender: Any) {
         
@@ -62,11 +63,66 @@ class CreateSetViewController: UIViewController {
         
         let setTime = Double(minNum + secNum)
         
-        let newSet = SetModel(setTitle: setName, setTime: setTime, isRestSet: isRest, dayOfWeek: dayOfWeek!)
+        if setTime == 0.0 {
+            showNoSetTimeErrorMsg()
+            return
+        }
         
-        print(newSet)
+        if let emptyTextField = setNameTextField.text?.isEmpty {
+            
+            if !emptyTextField {
+                setName = setNameTextField.text!
+                saveSetData(setName: setName, setTime: setTime)
+                performSegue(withIdentifier: "backToMainVC", sender: self)
+            }else{
+                showEmptyTFErrorMsg()
+                return
+            }
+        }
+    }
+    
+    func saveSetData(setName: String, setTime: Double){
         
-        performSegue(withIdentifier: "backToMainVC", sender: self)
+        let CDcontext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext //Getting the context of the CoreData object
+        
+        let set = Set(context: CDcontext)
+        set.setTitle = setName
+        set.setTime = setTime
+        set.isRestSet = Int16(isRest)
+        set.dayOfWeek = dayOfWeek!  //Ok to force unwrap as it is set when this VC shows.
+        
+        do {
+            try CDcontext.save()
+        } catch {
+            print("Error saving context \(error)")
+        }
+        
+        print(set.setTitle!)
+        
+    }
+    
+    func showEmptyTFErrorMsg(){    //Showing an error if the textfield is empty
+       
+        let alertDialog = UIAlertController(title: "Empty Set Name", message: "Please provide a name for the set.", preferredStyle: .alert)
+        
+        let okBtn = UIAlertAction(title: "Got it", style: .default, handler: {action in
+            alertDialog.dismiss(animated: true, completion: nil)
+        })
+        
+        alertDialog.addAction(okBtn)
+        self.present(alertDialog, animated: true, completion: nil)
+    }
+    
+    func showNoSetTimeErrorMsg(){   //Showing an error if no time duration has been set.
+        
+        let alertDialog = UIAlertController(title: "No Set Time", message: "No Time was added to the set. Please add the duration of the set.", preferredStyle: .alert)
+        
+        let okBtn = UIAlertAction(title: "Got it", style: .default, handler: {action in
+            alertDialog.dismiss(animated: true, completion: nil)
+        })
+        
+        alertDialog.addAction(okBtn)
+        self.present(alertDialog, animated: true, completion: nil)
     }
     
 }//End of ViewController

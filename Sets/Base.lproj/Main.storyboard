@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iqG-YK-316">
     <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -14,7 +14,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Sets-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Sets" customModuleProvider="target" sceneMemberID="viewController">
@@ -34,7 +34,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gBb-VD-Vir">
-                                <rect key="frame" x="20.666666666666657" y="146.66666666666669" width="372.66666666666674" height="643.66666666666652"/>
+                                <rect key="frame" x="20.666666666666657" y="203" width="372.66666666666674" height="587.33333333333337"/>
                                 <color key="backgroundColor" red="0.21960784310000001" green="0.23921568630000001" blue="0.23137254900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.090196078430000007" green="0.74509803919999995" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
@@ -117,14 +117,8 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sets" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T7s-63-Gee">
-                                <rect key="frame" x="20" y="59" width="374" height="43.666666666666657"/>
-                                <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="36"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="2nO-x3-xba">
-                                <rect key="frame" x="20" y="110.66666666666667" width="374" height="29.000000000000014"/>
+                                <rect key="frame" x="20" y="160" width="374" height="29"/>
                                 <segments>
                                     <segment title="Mon"/>
                                     <segment title="Tue"/>
@@ -143,26 +137,20 @@
                         <color key="backgroundColor" red="0.2196078431372549" green="0.23921568627450979" blue="0.23137254901960785" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="u9e-hj-YZG" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="19j-2r-7pO"/>
-                            <constraint firstItem="T7s-63-Gee" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="3Ox-kn-ru9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2nO-x3-xba" secondAttribute="trailing" constant="20" id="3Qf-hr-Evh"/>
                             <constraint firstItem="gBb-VD-Vir" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.9" id="7sY-BO-9eW"/>
                             <constraint firstItem="2nO-x3-xba" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="9NW-8D-lfh"/>
                             <constraint firstItem="u9e-hj-YZG" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.08" id="Ayf-eg-60k"/>
-                            <constraint firstItem="2nO-x3-xba" firstAttribute="top" secondItem="T7s-63-Gee" secondAttribute="bottom" constant="8" id="GcE-9N-FVx"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="T7s-63-Gee" secondAttribute="trailing" constant="20" id="JNj-DQ-tOB"/>
-                            <constraint firstItem="gBb-VD-Vir" firstAttribute="top" secondItem="2nO-x3-xba" secondAttribute="bottom" constant="8" id="YlN-Mm-Fo8"/>
+                            <constraint firstItem="gBb-VD-Vir" firstAttribute="top" secondItem="2nO-x3-xba" secondAttribute="bottom" constant="15" id="YlN-Mm-Fo8"/>
                             <constraint firstItem="u9e-hj-YZG" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="cEO-dg-ls6"/>
+                            <constraint firstItem="2nO-x3-xba" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="m8S-3T-oaX"/>
                             <constraint firstItem="u9e-hj-YZG" firstAttribute="top" secondItem="gBb-VD-Vir" secondAttribute="bottom" id="qxs-bU-Ty8"/>
                             <constraint firstItem="gBb-VD-Vir" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="rCw-67-3eW"/>
-                            <constraint firstItem="T7s-63-Gee" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="tYt-g9-Rdj"/>
                             <constraint firstItem="u9e-hj-YZG" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="z7B-s4-Uua"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <variation key="heightClass=compact-widthClass=regular">
                             <mask key="constraints">
-                                <exclude reference="JNj-DQ-tOB"/>
-                                <exclude reference="3Ox-kn-ru9"/>
-                                <exclude reference="tYt-g9-Rdj"/>
                                 <exclude reference="19j-2r-7pO"/>
                                 <exclude reference="Ayf-eg-60k"/>
                                 <exclude reference="cEO-dg-ls6"/>
@@ -171,15 +159,154 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" title="Sets" id="C9i-L9-6ym">
+                        <barButtonItem key="backBarButtonItem" title="Sets" id="mUZ-bA-WYj"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="daySegmentControl" destination="2nO-x3-xba" id="oaa-Aa-lRQ"/>
                         <outlet property="setTableView" destination="gBb-VD-Vir" id="G8N-Cu-Nzd"/>
                         <segue destination="8o4-8N-xVB" kind="presentation" identifier="goToCreateSetSegue" id="16l-Ev-rre"/>
+                        <segue destination="GuS-iR-NDa" kind="show" identifier="updateSetSegue" id="Ozk-AL-CXJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="152.17391304347828" y="51.5625"/>
+            <point key="canvasLocation" x="1062.3188405797102" y="51.5625"/>
+        </scene>
+        <!--Update set-->
+        <scene sceneID="amK-nY-wj7">
+            <objects>
+                <viewController id="GuS-iR-NDa" customClass="UpdateSetViewController" customModule="Sets" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QTS-wN-UdU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="euq-UB-DTi">
+                                <rect key="frame" x="20" y="223" width="374" height="42"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tLk-yA-EPl">
+                                        <rect key="frame" x="0.0" y="0.0" width="112" height="42"/>
+                                        <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="25"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X7n-df-Edc">
+                                        <rect key="frame" x="288" y="0.0" width="86" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="Change"/>
+                                        <connections>
+                                            <action selector="changeSetName:" destination="GuS-iR-NDa" eventType="touchUpInside" id="aUu-FE-17d"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="75" translatesAutoresizingMaskIntoConstraints="NO" id="iKK-c7-Dco">
+                                <rect key="frame" x="20" y="300" width="374" height="29"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="yUH-tU-j2l">
+                                        <rect key="frame" x="0.0" y="0.0" width="12.666666666666666" height="29"/>
+                                        <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minutes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oec-lk-r8G">
+                                        <rect key="frame" x="128" y="0.0" width="77" height="29"/>
+                                        <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="60" translatesAutoresizingMaskIntoConstraints="NO" id="F8W-aA-QfY">
+                                        <rect key="frame" x="280" y="0.0" width="94" height="29"/>
+                                        <connections>
+                                            <action selector="incrementMinutes:" destination="8o4-8N-xVB" eventType="valueChanged" id="MtR-1r-lkO"/>
+                                            <action selector="incrementMinutes:" destination="GuS-iR-NDa" eventType="valueChanged" id="v7F-9m-Gxj"/>
+                                        </connections>
+                                    </stepper>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="73" translatesAutoresizingMaskIntoConstraints="NO" id="L70-cv-Z8n">
+                                <rect key="frame" x="20" y="364" width="374" height="29"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="n4r-A5-NdE">
+                                        <rect key="frame" x="0.0" y="0.0" width="12.666666666666666" height="29"/>
+                                        <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seconds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eti-QB-QKa">
+                                        <rect key="frame" x="126" y="0.0" width="81" height="29"/>
+                                        <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="60" translatesAutoresizingMaskIntoConstraints="NO" id="3nG-lx-Qun">
+                                        <rect key="frame" x="280" y="0.0" width="94" height="29"/>
+                                        <connections>
+                                            <action selector="incrementSeconds:" destination="8o4-8N-xVB" eventType="valueChanged" id="HAo-qb-c6G"/>
+                                            <action selector="incrementSeconds:" destination="GuS-iR-NDa" eventType="valueChanged" id="xwS-uO-3lB"/>
+                                        </connections>
+                                    </stepper>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uYE-jb-gAV">
+                                <rect key="frame" x="0.0" y="423" width="414" height="71.666666666666686"/>
+                                <color key="backgroundColor" red="0.090196078430000007" green="0.74509803919999995" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="VarelaRound-Regular" family="Varela Round" pointSize="24"/>
+                                <state key="normal" title="Update">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="updateSet:" destination="GuS-iR-NDa" eventType="touchUpInside" id="air-w4-luR"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="iut-JF-Tyc">
+                                <rect key="frame" x="104" y="170" width="206" height="29"/>
+                                <segments>
+                                    <segment title="Set"/>
+                                    <segment title="Rest"/>
+                                </segments>
+                                <connections>
+                                    <action selector="changeSet_Rest:" destination="GuS-iR-NDa" eventType="valueChanged" id="KJK-Cw-irN"/>
+                                    <action selector="setSelector:" destination="8o4-8N-xVB" eventType="valueChanged" id="q4i-7V-oMm"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" red="0.21960784310000001" green="0.23921568630000001" blue="0.23137254900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.090196078430000007" green="0.74509803919999995" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Dgb-12-eku" firstAttribute="trailing" secondItem="iut-JF-Tyc" secondAttribute="trailing" constant="104" id="3kI-E1-ojw"/>
+                            <constraint firstItem="uYE-jb-gAV" firstAttribute="height" secondItem="QTS-wN-UdU" secondAttribute="height" multiplier="0.08" id="823-c0-LhG"/>
+                            <constraint firstItem="iut-JF-Tyc" firstAttribute="leading" secondItem="Dgb-12-eku" secondAttribute="leading" constant="104" id="BSm-hp-JgI"/>
+                            <constraint firstItem="Dgb-12-eku" firstAttribute="trailing" secondItem="euq-UB-DTi" secondAttribute="trailing" constant="20" id="G5m-uZ-MWm"/>
+                            <constraint firstItem="euq-UB-DTi" firstAttribute="leading" secondItem="Dgb-12-eku" secondAttribute="leading" constant="20" id="Mt2-CE-yrT"/>
+                            <constraint firstItem="L70-cv-Z8n" firstAttribute="leading" secondItem="Dgb-12-eku" secondAttribute="leading" constant="20" id="OZo-uD-r1v"/>
+                            <constraint firstItem="iKK-c7-Dco" firstAttribute="leading" secondItem="Dgb-12-eku" secondAttribute="leading" constant="20" id="OaS-Dl-Bfv"/>
+                            <constraint firstItem="iut-JF-Tyc" firstAttribute="top" secondItem="Dgb-12-eku" secondAttribute="top" constant="30" id="Qff-tc-Bpr"/>
+                            <constraint firstItem="uYE-jb-gAV" firstAttribute="top" secondItem="L70-cv-Z8n" secondAttribute="bottom" constant="30" id="UnZ-hp-8ry"/>
+                            <constraint firstItem="Dgb-12-eku" firstAttribute="trailing" secondItem="L70-cv-Z8n" secondAttribute="trailing" constant="20" id="XZB-O3-cdg"/>
+                            <constraint firstItem="Dgb-12-eku" firstAttribute="trailing" secondItem="iKK-c7-Dco" secondAttribute="trailing" constant="20" id="Y33-0t-L7x"/>
+                            <constraint firstItem="iKK-c7-Dco" firstAttribute="top" secondItem="euq-UB-DTi" secondAttribute="bottom" constant="35" id="bgf-pc-efh"/>
+                            <constraint firstItem="uYE-jb-gAV" firstAttribute="trailing" secondItem="Dgb-12-eku" secondAttribute="trailing" id="qtW-fs-8wh"/>
+                            <constraint firstItem="uYE-jb-gAV" firstAttribute="leading" secondItem="Dgb-12-eku" secondAttribute="leading" id="uQW-2l-2Ar"/>
+                            <constraint firstItem="euq-UB-DTi" firstAttribute="top" secondItem="iut-JF-Tyc" secondAttribute="bottom" constant="25" id="wW9-Pv-Dxt"/>
+                            <constraint firstItem="L70-cv-Z8n" firstAttribute="top" secondItem="iKK-c7-Dco" secondAttribute="bottom" constant="35" id="zVF-dm-xi0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Dgb-12-eku"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Update set" id="A7b-Ec-Q9P"/>
+                    <connections>
+                        <outlet property="changeBtn" destination="X7n-df-Edc" id="cwU-bX-xSE"/>
+                        <outlet property="minutesLabel" destination="yUH-tU-j2l" id="Q8M-8g-OGt"/>
+                        <outlet property="minutesStepper" destination="F8W-aA-QfY" id="UKJ-Rt-K6K"/>
+                        <outlet property="secondsLabel" destination="n4r-A5-NdE" id="Ok9-t6-kvB"/>
+                        <outlet property="secondsStepper" destination="3nG-lx-Qun" id="RTR-q3-sgy"/>
+                        <outlet property="setName" destination="tLk-yA-EPl" id="8Qe-gi-5kU"/>
+                        <outlet property="set_restSegment" destination="iut-JF-Tyc" id="FK4-9x-Lyq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u4h-U8-8Dm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1976.8115942028987" y="51.5625"/>
         </scene>
         <!--Create Set View Controller-->
         <scene sceneID="5xf-EP-4St">
@@ -316,13 +443,37 @@
                         <outlet property="minNumLabel" destination="sZd-FV-0qq" id="Unh-am-ydV"/>
                         <outlet property="secNumLabel" destination="3rS-gs-I5r" id="yI2-nz-797"/>
                         <outlet property="setNameTextField" destination="Up7-Qp-n0c" id="JSO-Ud-I16"/>
-                        <segue destination="AFh-ry-ceR" kind="unwind" identifier="backToMainVC" unwindAction="backFromCreateWithSegue:" id="Dkc-Hr-fIp"/>
+                        <segue destination="AFh-ry-ceR" kind="unwind" identifier="backToMainVC" unwindAction="backFromCreateScreenWithSegue:" id="dOb-8b-WUm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f0m-JQ-LwE" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="AFh-ry-ceR" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="150.72463768115944" y="770.75892857142856"/>
+            <point key="canvasLocation" x="1062" y="781"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="SQc-bS-num">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iqG-YK-316" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" largeTitles="YES" id="DuF-JQ-PjX">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.2196078431372549" green="0.23921568627450979" blue="0.23137254901960785" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.090196078431372548" green="0.74509803921568629" blue="0.73333333333333328" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Dg9-jR-lf6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NEN-Xe-eMt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="152.17391304347828" y="51.5625"/>
         </scene>
     </scenes>
     <resources>

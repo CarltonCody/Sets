@@ -15,8 +15,10 @@
 		19020D5E222DF671007F9931 /* VarelaRound-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 19020D5D222DF671007F9931 /* VarelaRound-Regular.ttf */; };
 		1903A4D42234BEB500605177 /* SetViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1903A4D32234BEB500605177 /* SetViewCell.swift */; };
 		1903A4D62234D10900605177 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1903A4D52234D10900605177 /* CardView.swift */; };
+		190646A92255B4AC003819A3 /* SetsDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 190646A72255B4AC003819A3 /* SetsDataModel.xcdatamodeld */; };
 		194598B322416ADD0029EB66 /* SetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194598B222416ADD0029EB66 /* SetModel.swift */; };
 		1975482A22497E6500D7A1DB /* CreateSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1975482922497E6500D7A1DB /* CreateSetViewController.swift */; };
+		19B0EB182256FBA30016D8A2 /* UpdateSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B0EB172256FBA30016D8A2 /* UpdateSetViewController.swift */; };
 		19C9A4AC2240401A008C4257 /* ConversionUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C9A4AB2240401A008C4257 /* ConversionUtils.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,8 +33,10 @@
 		19020D5D222DF671007F9931 /* VarelaRound-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VarelaRound-Regular.ttf"; sourceTree = "<group>"; };
 		1903A4D32234BEB500605177 /* SetViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetViewCell.swift; sourceTree = "<group>"; };
 		1903A4D52234D10900605177 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		190646A82255B4AC003819A3 /* SetsDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SetsDataModel.xcdatamodel; sourceTree = "<group>"; };
 		194598B222416ADD0029EB66 /* SetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetModel.swift; sourceTree = "<group>"; };
 		1975482922497E6500D7A1DB /* CreateSetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSetViewController.swift; sourceTree = "<group>"; };
+		19B0EB172256FBA30016D8A2 /* UpdateSetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateSetViewController.swift; sourceTree = "<group>"; };
 		19C9A4AB2240401A008C4257 /* ConversionUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,6 +96,7 @@
 		194598B122416AB80029EB66 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				190646A72255B4AC003819A3 /* SetsDataModel.xcdatamodeld */,
 				194598B222416ADD0029EB66 /* SetModel.swift */,
 			);
 			path = Models;
@@ -102,6 +107,7 @@
 			children = (
 				1975482922497E6500D7A1DB /* CreateSetViewController.swift */,
 				19020D4C222DF4EF007F9931 /* ViewController.swift */,
+				19B0EB172256FBA30016D8A2 /* UpdateSetViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -206,7 +212,9 @@
 				19020D4D222DF4EF007F9931 /* ViewController.swift in Sources */,
 				1903A4D42234BEB500605177 /* SetViewCell.swift in Sources */,
 				1975482A22497E6500D7A1DB /* CreateSetViewController.swift in Sources */,
+				19B0EB182256FBA30016D8A2 /* UpdateSetViewController.swift in Sources */,
 				19C9A4AC2240401A008C4257 /* ConversionUtils.swift in Sources */,
+				190646A92255B4AC003819A3 /* SetsDataModel.xcdatamodeld in Sources */,
 				1903A4D62234D10900605177 /* CardView.swift in Sources */,
 				194598B322416ADD0029EB66 /* SetModel.swift in Sources */,
 				19020D4B222DF4EF007F9931 /* AppDelegate.swift in Sources */,
@@ -411,6 +419,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		190646A72255B4AC003819A3 /* SetsDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				190646A82255B4AC003819A3 /* SetsDataModel.xcdatamodel */,
+			);
+			currentVersion = 190646A82255B4AC003819A3 /* SetsDataModel.xcdatamodel */;
+			path = SetsDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 19020D3F222DF4EF007F9931 /* Project object */;
 }
